@@ -3,9 +3,9 @@ const NotionPageToHtml = require('notion-page-to-html');
 const router = express.Router();
 
 /* GET users listing. */
-router.get('/html/:notionKey', async function(req, res, next) {
+router.get('/html', async function(req, res, next) {
   try {
-    const {notionKey} = req.params;
+    const {notionKey} = req.query;
     if (!notionKey) {
       res.status(400).send('Error: Missing \'notion-key\'');
       return;
