@@ -37,12 +37,13 @@ router.get('/html', async function(req, res, next) {
       res.status(400).send('Error: Missing \'notion-key\'');
       return;
     }
-    const url = notionKey.includes('https://') ?
-      notionKey :
-      `https://notion.so/${notionKey}`;
-    const content = await NotionPageToHtml.convert(url);
+    const notionId = notionKey.includes('https://') ?
+      notionKey.split('-')[notionKey.split('-').length - 1] :
+      notionKey;
+    const notionURL = `https://notion.so/${notionId}`;
+    const content = await NotionPageToHtml.convert(notionURL);
     if (!content) {
-      res.send(`Error: Convert Notion to HTML from '${url}'`);
+      res.send(`Error: Convert Notion to HTML from '${notionURL}'`);
       return;
     }
     const {html} = content;
