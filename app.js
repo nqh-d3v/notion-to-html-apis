@@ -24,6 +24,8 @@ app.use(cors({
   origin: [
     'http://localhost:8000',
     'http://localhost:8001',
+    'https://admin-dev.op3n.xyz',
+    'https://admin-staging.op3n.xyz',
   ],
 }));
 
