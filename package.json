@@ -14,7 +14,7 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "notion-page-to-html": "^1.1.2"
+    "notion-page-to-html": "git+https://github.com/turtledev-space/notion-to-html.git"
   },
   "devDependencies": {
     "eslint": "^8.9.0",
